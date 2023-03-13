@@ -9,6 +9,7 @@ class ReadingPlanService:
         Esse proxy existe para que seja possível mockar
         a função `find_news` do módulo `tech_news.database`
         sem afetar o teste do requisito.
+
         """
         return find_news()
 
