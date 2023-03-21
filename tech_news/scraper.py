@@ -67,6 +67,6 @@ def get_tech_news(amount):
     while len(news) < amount:
         html = fetch(scrape_next_page_link(html))
         news.extend(scrape_updates(html))
-    all_news = [scrape_news(fetch(new)) for new in news]
+    all_news = [scrape_news(fetch(link)) for link in news]
     create_news(all_news[:amount])
     return all_news[:amount]

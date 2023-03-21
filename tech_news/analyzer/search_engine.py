@@ -13,7 +13,7 @@ def search_by_date(date):
     try:
         date = datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y")
         time = search_news({"timestamp": date})
-        return [(new["title"], new["url"]) for new in time]
+        return [(news["title"], news["url"]) for news in time]
     except ValueError:
         raise ValueError("Data inválida")
 
