@@ -42,22 +42,21 @@ def scrape_next_page_link(html_content):
 
 # Requisito 4
 def scrape_news(html_content):
-    """Seu código deve vir aqui"""
-#    soup = BeautifulSoup(html_content)
+    soup = BeautifulSoup(html_content)
 
-#    return {
-#        "url": soup.find("link", {"rel": "canonical"})["href"].strip(),
-#        "title": soup.find("h1", {"class": "entry-title"}).text.strip(),
-#        "timestamp": soup.find("li", {"class": "meta-date"}).text,
-#        "writer": soup.find("span", {"class": "author"}).a.text,
-#        "reading_time": int(
-#            soup.find("li", {"class": "meta-reading-time"}).text.split()[0]
-#        ),
-#        "summary": soup.find(
-#            "div", {"class": "entry-content"}
-#        ).p.text.strip(),
-#        "category": soup.find("span", {"class": "label"}).text,
-#    }
+    return {
+        "url": soup.find("link", {"rel": "canonical"})["href"].strip(),
+        "title": soup.find("h1", {"class": "entry-title"}).text.strip(),
+        "timestamp": soup.find("li", {"class": "meta-date"}).text,
+        "writer": soup.find("span", {"class": "author"}).a.text,
+        "reading_time": int(
+            soup.find("li", {"class": "meta-reading-time"}).text.split()[0]
+        ),
+        "summary": soup.find(
+            "div", {"class": "entry-content"}
+        ).p.text.strip(),
+        "category": soup.find("span", {"class": "label"}).text,
+    }
 
 
 # Requisito 5
