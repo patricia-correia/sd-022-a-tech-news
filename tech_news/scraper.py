@@ -41,7 +41,8 @@ def scrape_next_page_link(html_content):
 
 
 # Requisito 4
-# def scrape_news(html_content):
+def scrape_news(html_content):
+    """Seu código deve vir aqui"""
 #    soup = BeautifulSoup(html_content)
 
 #    return {
@@ -57,7 +58,7 @@ def scrape_next_page_link(html_content):
 #        ).p.text.strip(),
 #        "category": soup.find("span", {"class": "label"}).text,
 #    }
-#
+
 
 # Requisito 5
 def get_tech_news(amount):
