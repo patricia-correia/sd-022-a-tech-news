@@ -1,7 +1,7 @@
 import requests
 import time
 from parsel import Selector
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from tech_news.database import create_news
 
 
@@ -41,23 +41,23 @@ def scrape_next_page_link(html_content):
 
 
 # Requisito 4
-def scrape_news(html_content):
-    soup = BeautifulSoup(html_content)
+# def scrape_news(html_content):
+#    soup = BeautifulSoup(html_content)
 
-    return {
-        "url": soup.find("link", {"rel": "canonical"})["href"].strip(),
-        "title": soup.find("h1", {"class": "entry-title"}).text.strip(),
-        "timestamp": soup.find("li", {"class": "meta-date"}).text,
-        "writer": soup.find("span", {"class": "author"}).a.text,
-        "reading_time": int(
-            soup.find("li", {"class": "meta-reading-time"}).text.split()[0]
-        ),
-        "summary": soup.find(
-            "div", {"class": "entry-content"}
-        ).p.text.strip(),
-        "category": soup.find("span", {"class": "label"}).text,
-    }
-
+#    return {
+#        "url": soup.find("link", {"rel": "canonical"})["href"].strip(),
+#        "title": soup.find("h1", {"class": "entry-title"}).text.strip(),
+#        "timestamp": soup.find("li", {"class": "meta-date"}).text,
+#        "writer": soup.find("span", {"class": "author"}).a.text,
+#        "reading_time": int(
+#            soup.find("li", {"class": "meta-reading-time"}).text.split()[0]
+#        ),
+#        "summary": soup.find(
+#            "div", {"class": "entry-content"}
+#        ).p.text.strip(),
+#        "category": soup.find("span", {"class": "label"}).text,
+#    }
+#
 
 # Requisito 5
 def get_tech_news(amount):
