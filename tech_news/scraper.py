@@ -42,8 +42,8 @@ def scrape_next_page_link(html_content):
 
 # Requisito 4
 def scrape_news(html_content):
-    soup = BeautifulSoup(html_content)
-
+    soup = BeautifulSoup(html_content, "html.parser")
+    soup.prettify()
     return {
         "url": soup.find("link", {"rel": "canonical"})["href"].strip(),
         "title": soup.find("h1", {"class": "entry-title"}).text.strip(),
